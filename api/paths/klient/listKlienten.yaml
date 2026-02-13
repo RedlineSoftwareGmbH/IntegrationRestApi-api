@@ -1,0 +1,20 @@
+get:
+  operationId: listKlienten
+  summary: Klient Liste
+  description: liefert alle Klient in diesem Bereich
+  tags:
+    - Klient
+  parameters:
+    - name: raiBilledOnly
+      in: query
+      required: false
+      schema:
+        type: boolean
+      description: Nur Klienten die nach RAI abgerechnet werden
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/KlientCollection.yaml'

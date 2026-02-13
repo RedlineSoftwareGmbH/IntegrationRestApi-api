@@ -1,0 +1,32 @@
+type: object
+x-flexClass: RedlineIntegUserabfrageRMO
+required:
+  - headId
+properties:
+  headId:
+    type: string
+    readOnly: true
+  username:
+    type: string
+  eintritt:
+    type: string
+    format: date
+  austritt:
+    type: string
+    format: date
+  personalNr:
+    type: string
+  nachname:
+    type: string
+  vorname:
+    type: string
+  adresse:
+    $ref: './AdresseUser.yaml'
+  email:
+    type: string
+  telGeschaeft:
+    type: string
+  telPrivat:
+    type: string
+  telMobil:
+    type: string

@@ -1,0 +1,9 @@
+type: object
+x-flexClass: RedlineIntegKlientListRMO
+required:
+  - data
+properties:
+  data:
+    type: array
+    items:
+      $ref: './Klientabfrage.yaml'

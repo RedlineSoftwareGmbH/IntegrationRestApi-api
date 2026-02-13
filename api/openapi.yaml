@@ -1,0 +1,36 @@
+openapi: 3.0.1
+info:
+  title: Redline IntegrationRest API
+  description: 'Schnittstelle Redline Applikationen'
+  version: '0.0.1'
+  termsOfService: ''
+  contact:
+    name: Redline Software AG
+    url: 'https://www.redline-software.ch'
+    email: info@redline-software.ch
+  license:
+    name: ''
+servers:
+  - url: 'https://redline.software/redline/Redline/{institution}/IntegrationRest'
+    description: Liveserver
+    variables:
+      institution:
+        default: Demo
+  - url: 'https://betatest84.servline.ch/redline_test/Redline/Demo/IntegrationRest'
+    description: Betaserver
+  - url: 'http://localhost:8063/Redline/Demo/IntegrationRest'
+    description: Lokale Entwicklung
+paths:
+  '/domain/v1/klient':
+    $ref: './paths/klient/listKlienten.yaml'
+  '/domain/v1/user':
+    $ref: './paths/user/listUser.yaml'
+
+components:
+  securitySchemes:
+    token:
+      type: http
+      scheme: bearer
+
+security:
+  - token: [ ]

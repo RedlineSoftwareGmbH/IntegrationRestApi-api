@@ -1,0 +1,75 @@
+type: object
+x-flexClass: RedlineIntegKlientabfrageRMO
+required:
+  - headId
+  - nachname
+  - umfeldadressen
+properties:
+  headId:
+    type: string
+    readOnly: true
+  klientNr:
+    type: string
+  nachname:
+    type: string
+  vorname:
+    type: string
+  eintritt:
+    type: string
+    format: date
+  austritt:
+    type: string
+    format: date
+  geburtsdatum:
+    type: string
+    format: date
+  zivilstand:
+    type: object
+    x-flexType: ref
+    description: 'user definiert'
+    properties:
+      headId:
+        type: string
+      label:
+        type: string
+        description: 'z.B. ledig, verheiratet, getrennt'
+  sprache:
+    type: string
+  nationalitaet:
+    type: string
+  konfession:
+    type: object
+    x-flexType: ref
+    description: 'user definiert, gewisse Werte sind vordefiniert'
+    properties:
+      headId:
+        type: string
+        description: '-10800 katholisch, -10801 reformiert, -10802 muslimisch, -10803 orthodox, -10804 konfessionslos, -10805 buddhistisch, -10806 jüdisch, -10807 hindu, -10808 methodist, -10809 andere'
+      label:
+        type: string
+        description: 'z.B. katholisch, reformiert, muslimisch'
+  geschlecht:
+    $ref: './Geschlecht.yaml'
+  ahv:
+    type: string
+    description: 'Schweizer AHV Nr'
+  heimatort:
+    type: string
+  adresse:
+    $ref: './Adresse.yaml'
+  kontakt:
+    type: object
+    x-flexClass: RedlineIntegKlientKontaktRMO
+    properties:
+      tel1:
+        type: string
+      tel2:
+        type: string
+      mobile:
+        type: string
+      email:
+        type: string
+  umfeldadressen:
+    type: array
+    items:
+      $ref: './Umfeldadresse.yaml'

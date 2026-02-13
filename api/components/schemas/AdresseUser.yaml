@@ -1,0 +1,9 @@
+type: object
+x-flexClass: RedlineIntegAdresseUserRMO
+properties:
+  strasse:
+    type: string
+  plz:
+    type: string
+  ort:
+    type: string

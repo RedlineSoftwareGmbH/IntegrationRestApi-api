@@ -1,0 +1,14 @@
+description: Kontaktdaten einer Umfeldadresse
+type: object
+x-flexClass: RedlineIntegKontaktRMO
+properties:
+  tel1:
+    type: string
+  tel2:
+    type: string
+  mobil:
+    type: string
+  email:
+    type: string
+  fax:
+    type: string

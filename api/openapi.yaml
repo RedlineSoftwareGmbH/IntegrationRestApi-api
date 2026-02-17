@@ -1,36 +1,680 @@
 openapi: 3.0.1
 info:
-  title: Redline IntegrationRest API
-  description: 'Schnittstelle Redline Applikationen'
-  version: '0.0.1'
-  termsOfService: ''
   contact:
-    name: Redline Software AG
-    url: 'https://www.redline-software.ch'
     email: info@redline-software.ch
+    name: Redline Software AG
+    url: https://www.redline-software.ch
+  description: Schnittstelle Redline Applikationen
   license:
-    name: ''
+    name: ""
+  termsOfService: ' '
+  title: Redline IntegrationRest API
+  version: 0.0.1
 servers:
-  - url: 'https://redline.software/redline/Redline/{institution}/IntegrationRest'
-    description: Liveserver
-    variables:
-      institution:
-        default: Demo
-  - url: 'https://betatest84.servline.ch/redline_test/Redline/Demo/IntegrationRest'
-    description: Betaserver
-  - url: 'http://localhost:8063/Redline/Demo/IntegrationRest'
-    description: Lokale Entwicklung
+- description: Liveserver
+  url: "https://redline.software/redline/Redline/{institution}/IntegrationRest"
+  variables:
+    institution:
+      default: Demo
+- description: Betaserver
+  url: https://betatest84.servline.ch/redline_test/Redline/Demo/IntegrationRest
+- description: Lokale Entwicklung
+  url: http://localhost:8063/Redline/Demo/IntegrationRest
+security:
+- token: []
 paths:
-  '/domain/v1/klient':
-    $ref: './paths/klient/listKlienten.yaml'
-  '/domain/v1/user':
-    $ref: './paths/user/listUser.yaml'
-
+  /domain/v1/klient:
+    get:
+      description: liefert alle Klient in diesem Bereich
+      operationId: listKlienten
+      parameters:
+      - description: Nur Klienten die nach RAI abgerechnet werden
+        in: query
+        name: raiBilledOnly
+        required: false
+        schema:
+          type: boolean
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KlientCollection"
+          description: ok
+      summary: Klient Liste
+      tags:
+      - Klient
+  /domain/v1/user:
+    get:
+      description: liefert alle User(Mitarbeitende) in diesem Bereich
+      operationId: listUser
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserCollection"
+          description: ok
+      summary: User Liste
+      tags:
+      - User
 components:
+  schemas:
+    KlientCollection:
+      example:
+        data:
+        - konfession:
+            label: label
+            key: key
+            headId: headId
+          umfeldadressen:
+          - geburtsdatum: 2000-01-23
+            kontaktPrivat:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            headExternalId: headExternalId
+            kontaktGeschaeft:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            vorname: vorname
+            anrede: anrede
+            bemerkung: bemerkung
+            adresse:
+              ort: ort
+              strasse: strasse
+              postfach: postfach
+              strasseZusatz: strasseZusatz
+              plz: plz
+            nachname: nachname
+            kontaktAlternativ:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            headId: headId
+          - geburtsdatum: 2000-01-23
+            kontaktPrivat:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            headExternalId: headExternalId
+            kontaktGeschaeft:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            vorname: vorname
+            anrede: anrede
+            bemerkung: bemerkung
+            adresse:
+              ort: ort
+              strasse: strasse
+              postfach: postfach
+              strasseZusatz: strasseZusatz
+              plz: plz
+            nachname: nachname
+            kontaktAlternativ:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            headId: headId
+          heimatort: heimatort
+          vorname: vorname
+          kontakt:
+            tel1: tel1
+            tel2: tel2
+            mobile: mobile
+            email: email
+          klientNr: klientNr
+          geschlecht: male
+          sprache: sprache
+          austritt: 2000-01-23
+          zivilstand:
+            label: label
+            key: key
+            headId: headId
+          ahv: ahv
+          headId: headId
+          geburtsdatum: 2000-01-23
+          eintritt: 2000-01-23
+          headExternalId: headExternalId
+          adresse:
+            ort: ort
+            strasse: strasse
+            postfach: postfach
+            strasseZusatz: strasseZusatz
+            plz: plz
+          nachname: nachname
+          nationalitaet: nationalitaet
+        - konfession:
+            label: label
+            key: key
+            headId: headId
+          umfeldadressen:
+          - geburtsdatum: 2000-01-23
+            kontaktPrivat:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            headExternalId: headExternalId
+            kontaktGeschaeft:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            vorname: vorname
+            anrede: anrede
+            bemerkung: bemerkung
+            adresse:
+              ort: ort
+              strasse: strasse
+              postfach: postfach
+              strasseZusatz: strasseZusatz
+              plz: plz
+            nachname: nachname
+            kontaktAlternativ:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            headId: headId
+          - geburtsdatum: 2000-01-23
+            kontaktPrivat:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            headExternalId: headExternalId
+            kontaktGeschaeft:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            vorname: vorname
+            anrede: anrede
+            bemerkung: bemerkung
+            adresse:
+              ort: ort
+              strasse: strasse
+              postfach: postfach
+              strasseZusatz: strasseZusatz
+              plz: plz
+            nachname: nachname
+            kontaktAlternativ:
+              tel1: tel1
+              mobil: mobil
+              tel2: tel2
+              fax: fax
+              email: email
+            headId: headId
+          heimatort: heimatort
+          vorname: vorname
+          kontakt:
+            tel1: tel1
+            tel2: tel2
+            mobile: mobile
+            email: email
+          klientNr: klientNr
+          geschlecht: male
+          sprache: sprache
+          austritt: 2000-01-23
+          zivilstand:
+            label: label
+            key: key
+            headId: headId
+          ahv: ahv
+          headId: headId
+          geburtsdatum: 2000-01-23
+          eintritt: 2000-01-23
+          headExternalId: headExternalId
+          adresse:
+            ort: ort
+            strasse: strasse
+            postfach: postfach
+            strasseZusatz: strasseZusatz
+            plz: plz
+          nachname: nachname
+          nationalitaet: nationalitaet
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Klientabfrage"
+          type: array
+      required:
+      - data
+      type: object
+      x-flexClass: RedlineIntegKlientListRMO
+    UserCollection:
+      example:
+        data:
+        - telMobil: telMobil
+          eintritt: 2000-01-23
+          vorname: vorname
+          adresse:
+            ort: ort
+            strasse: strasse
+            plz: plz
+          telPrivat: telPrivat
+          nachname: nachname
+          telGeschaeft: telGeschaeft
+          austritt: 2000-01-23
+          personalNr: personalNr
+          email: email
+          headId: headId
+          username: username
+        - telMobil: telMobil
+          eintritt: 2000-01-23
+          vorname: vorname
+          adresse:
+            ort: ort
+            strasse: strasse
+            plz: plz
+          telPrivat: telPrivat
+          nachname: nachname
+          telGeschaeft: telGeschaeft
+          austritt: 2000-01-23
+          personalNr: personalNr
+          email: email
+          headId: headId
+          username: username
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Userabfrage"
+          type: array
+      required:
+      - data
+      type: object
+      x-flexClass: RedlineIntegUserListRMO
+    Klientabfrage:
+      example:
+        konfession:
+          label: label
+          key: key
+          headId: headId
+        umfeldadressen:
+        - geburtsdatum: 2000-01-23
+          kontaktPrivat:
+            tel1: tel1
+            mobil: mobil
+            tel2: tel2
+            fax: fax
+            email: email
+          headExternalId: headExternalId
+          kontaktGeschaeft:
+            tel1: tel1
+            mobil: mobil
+            tel2: tel2
+            fax: fax
+            email: email
+          vorname: vorname
+          anrede: anrede
+          bemerkung: bemerkung
+          adresse:
+            ort: ort
+            strasse: strasse
+            postfach: postfach
+            strasseZusatz: strasseZusatz
+            plz: plz
+          nachname: nachname
+          kontaktAlternativ:
+            tel1: tel1
+            mobil: mobil
+            tel2: tel2
+            fax: fax
+            email: email
+          headId: headId
+        - geburtsdatum: 2000-01-23
+          kontaktPrivat:
+            tel1: tel1
+            mobil: mobil
+            tel2: tel2
+            fax: fax
+            email: email
+          headExternalId: headExternalId
+          kontaktGeschaeft:
+            tel1: tel1
+            mobil: mobil
+            tel2: tel2
+            fax: fax
+            email: email
+          vorname: vorname
+          anrede: anrede
+          bemerkung: bemerkung
+          adresse:
+            ort: ort
+            strasse: strasse
+            postfach: postfach
+            strasseZusatz: strasseZusatz
+            plz: plz
+          nachname: nachname
+          kontaktAlternativ:
+            tel1: tel1
+            mobil: mobil
+            tel2: tel2
+            fax: fax
+            email: email
+          headId: headId
+        heimatort: heimatort
+        vorname: vorname
+        kontakt:
+          tel1: tel1
+          tel2: tel2
+          mobile: mobile
+          email: email
+        klientNr: klientNr
+        geschlecht: male
+        sprache: sprache
+        austritt: 2000-01-23
+        zivilstand:
+          label: label
+          key: key
+          headId: headId
+        ahv: ahv
+        headId: headId
+        geburtsdatum: 2000-01-23
+        eintritt: 2000-01-23
+        headExternalId: headExternalId
+        adresse:
+          ort: ort
+          strasse: strasse
+          postfach: postfach
+          strasseZusatz: strasseZusatz
+          plz: plz
+        nachname: nachname
+        nationalitaet: nationalitaet
+      properties:
+        headId:
+          readOnly: true
+          type: string
+        klientNr:
+          type: string
+        nachname:
+          type: string
+        vorname:
+          type: string
+        eintritt:
+          format: date
+          type: string
+        austritt:
+          format: date
+          type: string
+        geburtsdatum:
+          format: date
+          type: string
+        zivilstand:
+          $ref: "#/components/schemas/Klientabfrage_zivilstand"
+        sprache:
+          type: string
+        nationalitaet:
+          type: string
+        konfession:
+          $ref: "#/components/schemas/Klientabfrage_konfession"
+        geschlecht:
+          $ref: "#/components/schemas/Geschlecht"
+        ahv:
+          description: Schweizer AHV Nr
+          type: string
+        heimatort:
+          type: string
+        adresse:
+          $ref: "#/components/schemas/Adresse"
+        kontakt:
+          $ref: "#/components/schemas/Klientabfrage_kontakt"
+        umfeldadressen:
+          items:
+            $ref: "#/components/schemas/Umfeldadresse"
+          type: array
+        headExternalId:
+          type: string
+      required:
+      - headId
+      - nachname
+      - umfeldadressen
+      type: object
+      x-flexClass: RedlineIntegKlientabfrageRMO
+    Userabfrage:
+      example:
+        telMobil: telMobil
+        eintritt: 2000-01-23
+        vorname: vorname
+        adresse:
+          ort: ort
+          strasse: strasse
+          plz: plz
+        telPrivat: telPrivat
+        nachname: nachname
+        telGeschaeft: telGeschaeft
+        austritt: 2000-01-23
+        personalNr: personalNr
+        email: email
+        headId: headId
+        username: username
+      properties:
+        headId:
+          readOnly: true
+          type: string
+        username:
+          type: string
+        eintritt:
+          format: date
+          type: string
+        austritt:
+          format: date
+          type: string
+        personalNr:
+          type: string
+        nachname:
+          type: string
+        vorname:
+          type: string
+        adresse:
+          $ref: "#/components/schemas/AdresseUser"
+        email:
+          type: string
+        telGeschaeft:
+          type: string
+        telPrivat:
+          type: string
+        telMobil:
+          type: string
+      required:
+      - headId
+      type: object
+      x-flexClass: RedlineIntegUserabfrageRMO
+    Geschlecht:
+      enum:
+      - male
+      - female
+      - divers
+      type: string
+    Adresse:
+      example:
+        ort: ort
+        strasse: strasse
+        postfach: postfach
+        strasseZusatz: strasseZusatz
+        plz: plz
+      properties:
+        strasse:
+          type: string
+        strasseZusatz:
+          type: string
+        postfach:
+          type: string
+        plz:
+          type: string
+        ort:
+          type: string
+      type: object
+      x-flexClass: RedlineIntegAdresseRMO
+    Umfeldadresse:
+      example:
+        geburtsdatum: 2000-01-23
+        kontaktPrivat:
+          tel1: tel1
+          mobil: mobil
+          tel2: tel2
+          fax: fax
+          email: email
+        headExternalId: headExternalId
+        kontaktGeschaeft:
+          tel1: tel1
+          mobil: mobil
+          tel2: tel2
+          fax: fax
+          email: email
+        vorname: vorname
+        anrede: anrede
+        bemerkung: bemerkung
+        adresse:
+          ort: ort
+          strasse: strasse
+          postfach: postfach
+          strasseZusatz: strasseZusatz
+          plz: plz
+        nachname: nachname
+        kontaktAlternativ:
+          tel1: tel1
+          mobil: mobil
+          tel2: tel2
+          fax: fax
+          email: email
+        headId: headId
+      properties:
+        headId:
+          type: string
+        anrede:
+          type: string
+        nachname:
+          type: string
+        vorname:
+          type: string
+        geburtsdatum:
+          format: date
+          type: string
+        bemerkung:
+          type: string
+        adresse:
+          $ref: "#/components/schemas/Adresse"
+        kontaktPrivat:
+          $ref: "#/components/schemas/Kontakt"
+        kontaktGeschaeft:
+          $ref: "#/components/schemas/Kontakt"
+        kontaktAlternativ:
+          $ref: "#/components/schemas/Kontakt"
+        headExternalId:
+          type: string
+      required:
+      - headId
+      type: object
+      x-flexClass: RedlineIntegKlientUmfeldadresseRMO
+    AdresseUser:
+      example:
+        ort: ort
+        strasse: strasse
+        plz: plz
+      properties:
+        strasse:
+          type: string
+        plz:
+          type: string
+        ort:
+          type: string
+      type: object
+      x-flexClass: RedlineIntegAdresseUserRMO
+    Kontakt:
+      description: Kontaktdaten einer Umfeldadresse
+      example:
+        tel1: tel1
+        mobil: mobil
+        tel2: tel2
+        fax: fax
+        email: email
+      properties:
+        tel1:
+          type: string
+        tel2:
+          type: string
+        mobil:
+          type: string
+        email:
+          type: string
+        fax:
+          type: string
+      type: object
+      x-flexClass: RedlineIntegKontaktRMO
+    Klientabfrage_zivilstand:
+      description: user definiert
+      example:
+        label: label
+        key: key
+        headId: headId
+      properties:
+        headId:
+          type: string
+        label:
+          description: "z.B. ledig, verheiratet, getrennt"
+          type: string
+        key:
+          type: string
+      type: object
+      x-flexType: refWithKey
+    Klientabfrage_konfession:
+      description: "user definiert, gewisse Werte sind vordefiniert"
+      example:
+        label: label
+        key: key
+        headId: headId
+      properties:
+        headId:
+          description: "-10800 katholisch, -10801 reformiert, -10802 muslimisch, -10803\
+            \ orthodox, -10804 konfessionslos, -10805 buddhistisch, -10806 jüdisch,\
+            \ -10807 hindu, -10808 methodist, -10809 andere"
+          type: string
+        label:
+          description: "z.B. katholisch, reformiert, muslimisch"
+          type: string
+        key:
+          type: string
+      type: object
+      x-flexType: refWithKey
+    Klientabfrage_kontakt:
+      example:
+        tel1: tel1
+        tel2: tel2
+        mobile: mobile
+        email: email
+      properties:
+        tel1:
+          type: string
+        tel2:
+          type: string
+        mobile:
+          type: string
+        email:
+          type: string
+      type: object
+      x-flexClass: RedlineIntegKlientKontaktRMO
   securitySchemes:
     token:
-      type: http
       scheme: bearer
-
-security:
-  - token: [ ]
+      type: http

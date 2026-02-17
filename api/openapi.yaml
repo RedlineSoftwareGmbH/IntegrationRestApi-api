@@ -61,198 +61,6 @@ paths:
 components:
   schemas:
     KlientCollection:
-      example:
-        data:
-        - konfession:
-            label: label
-            key: key
-            headId: headId
-          umfeldadressen:
-          - geburtsdatum: 2000-01-23
-            kontaktPrivat:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            headExternalId: headExternalId
-            kontaktGeschaeft:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            vorname: vorname
-            anrede: anrede
-            bemerkung: bemerkung
-            adresse:
-              ort: ort
-              strasse: strasse
-              postfach: postfach
-              strasseZusatz: strasseZusatz
-              plz: plz
-            nachname: nachname
-            kontaktAlternativ:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            headId: headId
-          - geburtsdatum: 2000-01-23
-            kontaktPrivat:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            headExternalId: headExternalId
-            kontaktGeschaeft:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            vorname: vorname
-            anrede: anrede
-            bemerkung: bemerkung
-            adresse:
-              ort: ort
-              strasse: strasse
-              postfach: postfach
-              strasseZusatz: strasseZusatz
-              plz: plz
-            nachname: nachname
-            kontaktAlternativ:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            headId: headId
-          heimatort: heimatort
-          vorname: vorname
-          kontakt:
-            tel1: tel1
-            tel2: tel2
-            mobile: mobile
-            email: email
-          klientNr: klientNr
-          geschlecht: male
-          sprache: sprache
-          austritt: 2000-01-23
-          zivilstand:
-            label: label
-            key: key
-            headId: headId
-          ahv: ahv
-          headId: headId
-          geburtsdatum: 2000-01-23
-          eintritt: 2000-01-23
-          headExternalId: headExternalId
-          adresse:
-            ort: ort
-            strasse: strasse
-            postfach: postfach
-            strasseZusatz: strasseZusatz
-            plz: plz
-          nachname: nachname
-          nationalitaet: nationalitaet
-        - konfession:
-            label: label
-            key: key
-            headId: headId
-          umfeldadressen:
-          - geburtsdatum: 2000-01-23
-            kontaktPrivat:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            headExternalId: headExternalId
-            kontaktGeschaeft:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            vorname: vorname
-            anrede: anrede
-            bemerkung: bemerkung
-            adresse:
-              ort: ort
-              strasse: strasse
-              postfach: postfach
-              strasseZusatz: strasseZusatz
-              plz: plz
-            nachname: nachname
-            kontaktAlternativ:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            headId: headId
-          - geburtsdatum: 2000-01-23
-            kontaktPrivat:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            headExternalId: headExternalId
-            kontaktGeschaeft:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            vorname: vorname
-            anrede: anrede
-            bemerkung: bemerkung
-            adresse:
-              ort: ort
-              strasse: strasse
-              postfach: postfach
-              strasseZusatz: strasseZusatz
-              plz: plz
-            nachname: nachname
-            kontaktAlternativ:
-              tel1: tel1
-              mobil: mobil
-              tel2: tel2
-              fax: fax
-              email: email
-            headId: headId
-          heimatort: heimatort
-          vorname: vorname
-          kontakt:
-            tel1: tel1
-            tel2: tel2
-            mobile: mobile
-            email: email
-          klientNr: klientNr
-          geschlecht: male
-          sprache: sprache
-          austritt: 2000-01-23
-          zivilstand:
-            label: label
-            key: key
-            headId: headId
-          ahv: ahv
-          headId: headId
-          geburtsdatum: 2000-01-23
-          eintritt: 2000-01-23
-          headExternalId: headExternalId
-          adresse:
-            ort: ort
-            strasse: strasse
-            postfach: postfach
-            strasseZusatz: strasseZusatz
-            plz: plz
-          nachname: nachname
-          nationalitaet: nationalitaet
       properties:
         data:
           items:
@@ -263,38 +71,6 @@ components:
       type: object
       x-flexClass: RedlineIntegKlientListRMO
     UserCollection:
-      example:
-        data:
-        - telMobil: telMobil
-          eintritt: 2000-01-23
-          vorname: vorname
-          adresse:
-            ort: ort
-            strasse: strasse
-            plz: plz
-          telPrivat: telPrivat
-          nachname: nachname
-          telGeschaeft: telGeschaeft
-          austritt: 2000-01-23
-          personalNr: personalNr
-          email: email
-          headId: headId
-          username: username
-        - telMobil: telMobil
-          eintritt: 2000-01-23
-          vorname: vorname
-          adresse:
-            ort: ort
-            strasse: strasse
-            plz: plz
-          telPrivat: telPrivat
-          nachname: nachname
-          telGeschaeft: telGeschaeft
-          austritt: 2000-01-23
-          personalNr: personalNr
-          email: email
-          headId: headId
-          username: username
       properties:
         data:
           items:
@@ -305,102 +81,6 @@ components:
       type: object
       x-flexClass: RedlineIntegUserListRMO
     Klientabfrage:
-      example:
-        konfession:
-          label: label
-          key: key
-          headId: headId
-        umfeldadressen:
-        - geburtsdatum: 2000-01-23
-          kontaktPrivat:
-            tel1: tel1
-            mobil: mobil
-            tel2: tel2
-            fax: fax
-            email: email
-          headExternalId: headExternalId
-          kontaktGeschaeft:
-            tel1: tel1
-            mobil: mobil
-            tel2: tel2
-            fax: fax
-            email: email
-          vorname: vorname
-          anrede: anrede
-          bemerkung: bemerkung
-          adresse:
-            ort: ort
-            strasse: strasse
-            postfach: postfach
-            strasseZusatz: strasseZusatz
-            plz: plz
-          nachname: nachname
-          kontaktAlternativ:
-            tel1: tel1
-            mobil: mobil
-            tel2: tel2
-            fax: fax
-            email: email
-          headId: headId
-        - geburtsdatum: 2000-01-23
-          kontaktPrivat:
-            tel1: tel1
-            mobil: mobil
-            tel2: tel2
-            fax: fax
-            email: email
-          headExternalId: headExternalId
-          kontaktGeschaeft:
-            tel1: tel1
-            mobil: mobil
-            tel2: tel2
-            fax: fax
-            email: email
-          vorname: vorname
-          anrede: anrede
-          bemerkung: bemerkung
-          adresse:
-            ort: ort
-            strasse: strasse
-            postfach: postfach
-            strasseZusatz: strasseZusatz
-            plz: plz
-          nachname: nachname
-          kontaktAlternativ:
-            tel1: tel1
-            mobil: mobil
-            tel2: tel2
-            fax: fax
-            email: email
-          headId: headId
-        heimatort: heimatort
-        vorname: vorname
-        kontakt:
-          tel1: tel1
-          tel2: tel2
-          mobile: mobile
-          email: email
-        klientNr: klientNr
-        geschlecht: male
-        sprache: sprache
-        austritt: 2000-01-23
-        zivilstand:
-          label: label
-          key: key
-          headId: headId
-        ahv: ahv
-        headId: headId
-        geburtsdatum: 2000-01-23
-        eintritt: 2000-01-23
-        headExternalId: headExternalId
-        adresse:
-          ort: ort
-          strasse: strasse
-          postfach: postfach
-          strasseZusatz: strasseZusatz
-          plz: plz
-        nachname: nachname
-        nationalitaet: nationalitaet
       properties:
         headId:
           readOnly: true
@@ -452,22 +132,6 @@ components:
       type: object
       x-flexClass: RedlineIntegKlientabfrageRMO
     Userabfrage:
-      example:
-        telMobil: telMobil
-        eintritt: 2000-01-23
-        vorname: vorname
-        adresse:
-          ort: ort
-          strasse: strasse
-          plz: plz
-        telPrivat: telPrivat
-        nachname: nachname
-        telGeschaeft: telGeschaeft
-        austritt: 2000-01-23
-        personalNr: personalNr
-        email: email
-        headId: headId
-        username: username
       properties:
         headId:
           readOnly: true
@@ -507,12 +171,6 @@ components:
       - divers
       type: string
     Adresse:
-      example:
-        ort: ort
-        strasse: strasse
-        postfach: postfach
-        strasseZusatz: strasseZusatz
-        plz: plz
       properties:
         strasse:
           type: string
@@ -527,38 +185,6 @@ components:
       type: object
       x-flexClass: RedlineIntegAdresseRMO
     Umfeldadresse:
-      example:
-        geburtsdatum: 2000-01-23
-        kontaktPrivat:
-          tel1: tel1
-          mobil: mobil
-          tel2: tel2
-          fax: fax
-          email: email
-        headExternalId: headExternalId
-        kontaktGeschaeft:
-          tel1: tel1
-          mobil: mobil
-          tel2: tel2
-          fax: fax
-          email: email
-        vorname: vorname
-        anrede: anrede
-        bemerkung: bemerkung
-        adresse:
-          ort: ort
-          strasse: strasse
-          postfach: postfach
-          strasseZusatz: strasseZusatz
-          plz: plz
-        nachname: nachname
-        kontaktAlternativ:
-          tel1: tel1
-          mobil: mobil
-          tel2: tel2
-          fax: fax
-          email: email
-        headId: headId
       properties:
         headId:
           type: string
@@ -588,10 +214,6 @@ components:
       type: object
       x-flexClass: RedlineIntegKlientUmfeldadresseRMO
     AdresseUser:
-      example:
-        ort: ort
-        strasse: strasse
-        plz: plz
       properties:
         strasse:
           type: string
@@ -603,12 +225,6 @@ components:
       x-flexClass: RedlineIntegAdresseUserRMO
     Kontakt:
       description: Kontaktdaten einer Umfeldadresse
-      example:
-        tel1: tel1
-        mobil: mobil
-        tel2: tel2
-        fax: fax
-        email: email
       properties:
         tel1:
           type: string
@@ -624,10 +240,6 @@ components:
       x-flexClass: RedlineIntegKontaktRMO
     Klientabfrage_zivilstand:
       description: user definiert
-      example:
-        label: label
-        key: key
-        headId: headId
       properties:
         headId:
           type: string
@@ -640,10 +252,6 @@ components:
       x-flexType: refWithKey
     Klientabfrage_konfession:
       description: "user definiert, gewisse Werte sind vordefiniert"
-      example:
-        label: label
-        key: key
-        headId: headId
       properties:
         headId:
           description: "-10800 katholisch, -10801 reformiert, -10802 muslimisch, -10803\
@@ -658,11 +266,6 @@ components:
       type: object
       x-flexType: refWithKey
     Klientabfrage_kontakt:
-      example:
-        tel1: tel1
-        tel2: tel2
-        mobile: mobile
-        email: email
       properties:
         tel1:
           type: string

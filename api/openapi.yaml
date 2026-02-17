@@ -7,7 +7,7 @@ info:
   description: Schnittstelle Redline Applikationen
   license:
     name: ""
-  termsOfService: ' '
+  termsOfService: ""
   title: Redline IntegrationRest API
   version: 0.0.1
 servers:

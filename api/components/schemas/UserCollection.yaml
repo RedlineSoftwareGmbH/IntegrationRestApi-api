@@ -1,9 +1,0 @@
-type: object
-x-flexClass: RedlineIntegUserListRMO
-required:
-  - data
-properties:
-  data:
-    type: array
-    items:
-      $ref: './Userabfrage.yaml'

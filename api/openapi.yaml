@@ -34,6 +34,15 @@ paths:
         required: false
         schema:
           type: boolean
+      - description: |
+          Returns only records that were updated after this timestamp. Must be an ISO 8601 UTC datetime.
+        example: 2026-02-20T10:15:00Z
+        in: query
+        name: updatedSince
+        required: false
+        schema:
+          format: date-time
+          type: string
       responses:
         "200":
           content:
@@ -48,6 +57,16 @@ paths:
     get:
       description: liefert alle User(Mitarbeitende) in diesem Bereich
       operationId: listUser
+      parameters:
+      - description: |
+          Returns only records that were updated after this timestamp. Must be an ISO 8601 UTC datetime.
+        example: 2026-02-20T10:15:00Z
+        in: query
+        name: updatedSince
+        required: false
+        schema:
+          format: date-time
+          type: string
       responses:
         "200":
           content:
@@ -58,6 +77,20 @@ paths:
       summary: User Liste
       tags:
       - User
+  /health:
+    get:
+      description: Returns HTTP 200 if the service is healthy.
+      operationId: getHealth
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getHealth_200_response"
+          description: Service is healthy
+      summary: Health check
+      tags:
+      - Infrastructure
 components:
   schemas:
     KlientCollection:
@@ -113,6 +146,10 @@ components:
         ahv:
           description: Schweizer AHV Nr
           type: string
+        krankenkasseKVG:
+          $ref: "#/components/schemas/Klientabfrage_krankenkasseKVG"
+        krankenkasseVVG:
+          $ref: "#/components/schemas/Klientabfrage_krankenkasseVVG"
         heimatort:
           type: string
         adresse:
@@ -188,6 +225,8 @@ components:
       properties:
         headId:
           type: string
+        kategorie:
+          $ref: "#/components/schemas/Umfeldadresse_kategorie"
         anrede:
           type: string
         nachname:
@@ -238,6 +277,12 @@ components:
           type: string
       type: object
       x-flexClass: RedlineIntegKontaktRMO
+    getHealth_200_response:
+      properties:
+        status:
+          example: ok
+          type: string
+      type: object
     Klientabfrage_zivilstand:
       description: user definiert
       properties:
@@ -265,6 +310,30 @@ components:
           type: string
       type: object
       x-flexType: refWithKey
+    Klientabfrage_krankenkasseKVG:
+      properties:
+        name:
+          type: string
+        sektion:
+          type: string
+        mitgliedernummer:
+          type: string
+        bagNr:
+          type: string
+        kartenNr:
+          type: string
+      type: object
+      x-flexClass: RedlineIntegKlientKrankenkasseKVGRMO
+    Klientabfrage_krankenkasseVVG:
+      properties:
+        name:
+          type: string
+        sektion:
+          type: string
+        mitgliedernummer:
+          type: string
+      type: object
+      x-flexClass: RedlineIntegKlientKrankenkasseVVGRMO
     Klientabfrage_kontakt:
       properties:
         tel1:
@@ -277,6 +346,18 @@ components:
           type: string
       type: object
       x-flexClass: RedlineIntegKlientKontaktRMO
+    Umfeldadresse_kategorie:
+      description: gewisse Werte sind vordefiniert
+      properties:
+        headId:
+          description: "-1 Haus/Facharzt, -2 Psychiater, -3 Externe Bezugsperson,\
+            \ -4 Beistand, -5 Notfallkontakt, -6 IV Berater"
+          type: string
+        label:
+          description: "z.B. Haus/Facharzt, Psychiater"
+          type: string
+      type: object
+      x-flexType: ref
   securitySchemes:
     token:
       scheme: bearer

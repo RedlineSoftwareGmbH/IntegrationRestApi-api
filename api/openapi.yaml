@@ -322,6 +322,13 @@ components:
           type: string
         kartenNr:
           type: string
+        gln:
+          description: Global Location Number
+          example: "7612345000008"
+          maxLength: 13
+          minLength: 13
+          pattern: "^[0-9]{13}$"
+          type: string
       type: object
       x-flexClass: RedlineIntegKlientKrankenkasseKVGRMO
     Klientabfrage_krankenkasseVVG:
@@ -331,6 +338,13 @@ components:
         sektion:
           type: string
         mitgliedernummer:
+          type: string
+        gln:
+          description: Global Location Number
+          example: "7612345000008"
+          maxLength: 13
+          minLength: 13
+          pattern: "^[0-9]{13}$"
           type: string
       type: object
       x-flexClass: RedlineIntegKlientKrankenkasseVVGRMO

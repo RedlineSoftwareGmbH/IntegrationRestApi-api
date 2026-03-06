@@ -67,6 +67,13 @@ paths:
         schema:
           format: date-time
           type: string
+      - description: Nur User liefern die aktuell aktiv sind
+        in: query
+        name: activeOnly
+        required: false
+        schema:
+          default: true
+          type: boolean
       responses:
         "200":
           content:
@@ -186,6 +193,9 @@ components:
         nachname:
           type: string
         vorname:
+          type: string
+        geburtsdatum:
+          format: date
           type: string
         adresse:
           $ref: "#/components/schemas/AdresseUser"

@@ -74,6 +74,11 @@ paths:
         schema:
           default: true
           type: boolean
+      - in: query
+        name: spitexOnly
+        schema:
+          default: false
+          type: boolean
       responses:
         "200":
           content:
